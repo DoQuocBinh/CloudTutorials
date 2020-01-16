@@ -20,8 +20,8 @@
         <option value="North Korea">North Korea</option>
     </select>
     <br>
-    <input type="button" value="Ok" onclick="display()">
-    <input type="button" value="Show/Hide" onclick="showHide()">
+    <input type="button" value="Ok" id="btnOk" >
+    <input type="button" value="Show/Hide" id="btnShowHide">
     <div id="result" style="display: none;">
         Name <label id="lblName"></label>
         <br>
@@ -31,12 +31,15 @@
     </div>
     <script>
         var isShown = false;
+        $("#btnOk").on('click',display);
+        $('#btnShowHide').on('click',showHide);
+        
         function showHide(){
             isShown = !isShown;
             if(isShown){
-                document.getElementById("result").style="display:block;border:solid 1px red";
+                $('#result').css({'display':'block','border':'solid 1px red'});
             }else{
-                document.getElementById("result").style="display:none";
+                $('#result').css('display','none');
             }
         }
         function display(){
