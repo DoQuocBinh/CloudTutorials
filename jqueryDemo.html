@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>JQuery demo</title>
+</head>
+<body>
+    <input type="text" name="" id="name">
+    <input type="button" value="Ok" onclick="hi()">
+    <input type="button" class="test" value ="Test" id="testButton">
+    <input type="button" class="test" value ="Try" id="tryButton">
+    <script>
+        function hi(){
+            let name = $('#name').val();
+            alert(`Hello ${name}`);
+        }
+        //khi tat ca HTML da duoc Browser load len 
+    //    $(document).ready(function(){
+    //         $('#testButton').click(function(e){
+    //             alert('hi test');
+    //         })
+    //    })
+        //$('#testButton').on('click',{name :'test me'},handlerClick);
+        //$('#tryButton').on('click',{name :'try me'},handlerClick);
+        $('input:button.test').on('click',handlerClick);
+        function handlerClick(e){
+            alert('hi11' + $(this).attr("value"));
+        }
+    </script>
+</body>
+</html>

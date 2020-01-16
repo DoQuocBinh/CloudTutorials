@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Name
+    <input type="text" name="" id="name">
+    <br>
+    Age
+    <input type="number" name="" id="age">
+    <br>
+    Country
+    <select name="" id="country">
+        <option value="Viet Nam">Viet Nam</option>
+        <option value="North Korea">North Korea</option>
+    </select>
+    <br>
+    <input type="button" value="Ok" onclick="display()">
+    <input type="button" value="Show/Hide" onclick="showHide()">
+    <div id="result" style="display: none;">
+        Name <label id="lblName"></label>
+        <br>
+        Age <label id="lblAge"></label>
+        <br>
+        Country <label id="lblCountry"></label>
+    </div>
+    <script>
+        var isShown = false;
+        function showHide(){
+            isShown = !isShown;
+            if(isShown){
+                document.getElementById("result").style="display:block;border:solid 1px red";
+            }else{
+                document.getElementById("result").style="display:none";
+            }
+        }
+        function display(){
+            document.getElementById("result").style="display:block;border:solid 1px red";
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let country = document.getElementById("country").value;
+
+            document.getElementById("lblName").innerHTML = name;
+            document.getElementById("lblAge").innerHTML = age;
+            document.getElementById("lblCountry").innerHTML = country;
+        }
+    </script>
+</body>
+</html>

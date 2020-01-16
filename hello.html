@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Study JS</title>
+</head>
+<body>
+    Enter your name
+    <input type="text" name="" id="name">
+    <br/>
+    Age<input type="text" name="" id="age">
+    <br>
+    <input type="button" value="Ok" style="background-color: brown;" onclick="hi()">
+    <br>
+    <p id="status"></p>
+    <script>
+        function hi(){
+            let name = document.getElementById('name').value;
+            let age = document.getElementById('age').value;
+            if(isNaN(age)){
+                alert('Age must be a number');
+                return;
+            }
+            //alert('Hi ' + name + " " + age);
+            let message  = `Hello ${name}, your age is ${age}`;
+            //alert(message);
+            document.getElementById('status').innerHTML= message;
+        }
+    </script>
+</body>
+</html>
